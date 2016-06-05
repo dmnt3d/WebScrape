@@ -1,0 +1,25 @@
+import bs4
+import re
+import urllib2
+
+BLOGurl  =  'http://blogs.vmware.com/vcloud'
+
+html =  urllib2.urlopen(BLOGurl)
+soup = bs4.BeautifulSoup(html)
+
+#for res in soup.findAll('h1',attrs={'class':'entry-title'}):
+#    print res
+
+data = soup.findAll('h1',attrs={'class':'entry-title'})
+
+soup = bs4.BeautifulSoup(data)
+item = soup.findAll(href=true)
+
+
+print item
+
+
+
+
+    
+
